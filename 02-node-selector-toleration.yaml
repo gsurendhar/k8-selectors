@@ -14,9 +14,9 @@ spec:
   tolerations: 
     - key: "key1"
       value: "value1"
-      operator: "equal"
+      operator: "Equal"
       effect: "NoSchedule"
     - key: "key1"
       value: "value1"
-      operator: "equal"
+      operator: "Equal"
       effect: "NoExecute"     
