@@ -5,12 +5,12 @@ metadata:
 spec:
   affinity:
     nodeAffinity: 
-      preferredDuringSchedulingIgnoreDuringExecution:
+      preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
-        - matchExpressions:
+          matchExpressions:
           - key: another-node-label-key
-            operator: IN 
+            operator: In
             values:
             - another-node-label-value
   containers:
