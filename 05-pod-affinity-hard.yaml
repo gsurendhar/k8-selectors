@@ -20,7 +20,7 @@ metadata:
 spec:
   affinity:
     podAffinity:    #pod-2 can also attached to node where the pod-1 is attached based labelSelector
-      requiredDuringSchedulingIgnoreDuringExecution:
+      requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
           - key: app-name
