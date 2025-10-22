@@ -7,21 +7,23 @@ spec:
   selector:
     matchLabels:
       app: store
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
         app: store
     spec:
       affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - store
+        podAntiAffinity:    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - store
             topologyKey: "kubernetes.io/hostname"
       containers:
       - name: redis-server
@@ -35,21 +37,23 @@ spec:
   selector:
     matchLabels:
       app: web-store
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
         app: web-store
     spec:
       affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - web-store
+        podAntiAffinity:    
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - web-store
             topologyKey: "kubernetes.io/hostname"
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
