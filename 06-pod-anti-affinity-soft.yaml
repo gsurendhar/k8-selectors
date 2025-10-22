@@ -20,7 +20,7 @@ metadata:
 spec:
   affinity:
     podAntiAffinity:    
-      preferredDuringSchedulingIgnoreDuringExecution:
+      preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         podAffinityTerm:
           labelSelector:
