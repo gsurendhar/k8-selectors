@@ -20,7 +20,7 @@ metadata:
 spec:
   affinity:
     podAffinity:    #pod-2 may or may not attached to node where the pod-1 is attached(soft rule)
-      preferredDuringSchedulingIgnoreDuringExecution:
+      preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         podAffinityTerm:
           labelSelector:
