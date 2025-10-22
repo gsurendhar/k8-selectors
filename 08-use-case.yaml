@@ -24,7 +24,7 @@ spec:
                   operator: In
                   values:
                   - store
-            topologyKey: "kubernetes.io/hostname"
+              topologyKey: "kubernetes.io/hostname"
       containers:
       - name: redis-server
         image: redis:3.2-alpine
@@ -54,7 +54,7 @@ spec:
                   operator: In
                   values:
                   - web-store
-            topologyKey: "kubernetes.io/hostname"
+              topologyKey: "kubernetes.io/hostname"
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
